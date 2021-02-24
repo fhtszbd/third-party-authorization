@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //JWT
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        //WECHAT
+        Overtrue\LaravelWeChat\ServiceProvider::class,
 
     ],
 
@@ -232,6 +234,8 @@ return [
         //JWT
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        //WECHAT
+        'EasyWeChat' => Overtrue\LaravelWeChat\Facade::class,
     ],
 
 ];
