@@ -15,7 +15,7 @@ class WechatController extends Controller
     {
         $app = app('wechat.official_account');
 
-        $app->server->setMessageHandler(function ($message){
+        $app->server->push(function ($message){
             $news = new NewsItem([
                 'title' => '方海婷测试',
                 'description' => '方海婷的描述',
