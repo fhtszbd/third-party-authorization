@@ -11,7 +11,7 @@ use EasyWeChat\Kernel\Messages\NewsItem;
 
 class WechatController extends Controller
 {
-    public function reply()
+    public function serve()
     {
         $app = app('wechat.official_account');
 
