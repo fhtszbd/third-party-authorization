@@ -25,8 +25,8 @@ Route::prefix('jwt')->namespace('JWT')->group(function(){
     Route::post('logout','JwtController@doLogout');
 });
 
-Route::namespace('WECHAT')->group(function (){
-    Route::any('/wechat', 'WechatController@serve');
+Route::prefix('wechat')->namespace('WECHAT')->group(function (){
+    Route::any('wechat', 'WechatController@reply');
 });
 
 

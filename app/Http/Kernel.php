@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\JwtCheckUser;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate;
 use Tymon\JWTAuth\Http\Middleware\Check;
 use Tymon\JWTAuth\Http\Middleware\RefreshToken;
 
@@ -67,6 +68,9 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //JWT
-        'third.auth'  => JwtCheckUser::class
+        'third.auth'  => JwtCheckUser::class,
+
+        //WECHAT
+        'wechat.oauth' => OAuthAuthenticate::class,
     ];
 }
