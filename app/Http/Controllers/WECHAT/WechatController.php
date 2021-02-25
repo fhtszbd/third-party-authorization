@@ -17,8 +17,11 @@ class WechatController extends Controller
 
         $app->server->push(function ($message){
             if($message['MsgType'] == 'event'){
-                return "欢迎关注";
+                if($message['Event'] == 'subscribe'){
+                    return "感谢关注，请回复关键字，获取您想要的信息";
+                }
             }elseif ($message['MsgType'] == 'text'){
+                //查询数据的信息，根据回复的信息回复相应的数据$message['Content']
                 $news = new NewsItem([
                     'title' => '方海婷测试',
                     'description' => '方海婷的描述',
