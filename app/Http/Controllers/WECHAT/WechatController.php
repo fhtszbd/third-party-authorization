@@ -16,16 +16,9 @@ class WechatController extends Controller
         $app = app('wechat.official_account');
 
         $app->server->push(function ($message){
-            if($message->Msg == 'event'){
-                switch ($message->Event) {
-                    case 'subscribe':
-                        return "欢迎关注";
-                    case 'unsubscribe':
-                        return "已取消关注";
-                    default:
-                        break;
-                }
-            }elseif ($message->MsgType == 'text'){
+            if($message['MsgType'] == 'event'){
+                return "欢迎关注";
+            }elseif ($message['MsgType'] == 'text'){
                 $news = new NewsItem([
                     'title' => '方海婷测试',
                     'description' => '方海婷的描述',
