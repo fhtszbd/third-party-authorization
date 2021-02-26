@@ -29,5 +29,9 @@ Route::namespace('WECHAT')->group(function (){
     Route::any('/wechat', 'WechatController@serve');
 });
 
+Route::prefix('ding')->namespace('DING')->group(function (){
+    Route::get('auth', 'DingController@auth');
+});
+
 
 
